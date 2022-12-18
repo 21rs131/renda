@@ -19,7 +19,7 @@ function checkRanking() {
     // **********【問題２】ランキングを表示しよう！**********
     let gameScore = ncmb.DataStore("Gamescore");
 
-    gameScore.order("score", true).limit(5).fetchAll()
+    gameScore.order("score", true).limit(8).fetchAll()
         .then(function(results) {
             console.log("検索に成功しました。");
             setData(results);
