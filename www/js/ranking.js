@@ -29,6 +29,17 @@ function checkRanking() {
         })
     // ******************************************************
 }
+function sortData() {
+    let gameScore = ncmb.DataStore("Gamescore");
+    gameScore.order("createData", true).limit(8).fetchAll()
+        .then(function(results) {
+            console.log("検索に成功しました。");
+            setData(results);
+        })
+        .catch(function(error) {
+            console.log("検索に失敗しました。エラー:" + error);
+        })
+}
 
 // テーブルにデータを設定
 function setData(array) {
