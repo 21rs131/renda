@@ -14,6 +14,13 @@ function toRanking() {
     window.location.href = "#ranking-page";
 }
 
+function toList() {
+    // データ取得
+    sortData();
+    // ランキング画面へ遷移
+    window.location.href = "#ranking-page";
+}
+
 // 【mBaaS】保存したデータの検索と取得
 function checkRanking() {
     // **********【問題２】ランキングを表示しよう！**********
