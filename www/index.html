@@ -31,7 +31,7 @@
         </div>
         <div data-role="content">
             <form name="gameForm">
-                <input type="button" value="過去の戦歴" name="ranking" onclick="toList()" />
+                <input type="button" value="過去のスコア" name="ranking" onclick="toList()" />
                 <input type="button" value="ランキングを見る" name="ranking" onclick="toRanking()" />
                 <center>
                     <h1>連打アプリ</h1>
@@ -102,7 +102,7 @@
             </center>
         </div>
         <div>
-        <input type="button" value="sort" name="start" onclick="sortData()"/>
+        <<input type="button" value="過去のスコア" name="ranking" onclick="toList()" />
         </div>
     </div>
     <!-- 戦歴画面 -->
@@ -113,7 +113,7 @@
         </div>
         <div data-role="content">
             <center>
-                <h1>過去の戦歴</h1><br />
+                <h1>過去のスコア</h1><br />
                 <table id="battleTable" border="1" width="90%" cellspacing="1" cellpadding="5">
                     <tr>
                         <td align="right" nowrap>１つ前</td>
@@ -160,9 +160,9 @@
         </div>
         <div>
         <input id="score" type="number" placeholder="serch score">
-        <input type="button" value="sort" name="start" onclick="sortData()"/>
+        <input type="button" value="score log" name="start" onclick="sortData()"/>
         <input type="button" value="score &lt" name="start" onclick="searchScoreLT()"/>
-        <input type="button" value="score &gt" name="start" onclick="sortData()"/>
+        <input type="button" value="score &gt" name="start" onclick="searchScoreGT()"/>
         </div>
     </div>
 </body>

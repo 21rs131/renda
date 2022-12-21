@@ -42,6 +42,7 @@ function sortData() {
         .then(function(results) {
             console.log("検索に成功しました。");
             setData1(results);
+            setData(results);
         })
         .catch(function(error) {
             console.log("検索に失敗しました。エラー:" + error);
@@ -55,10 +56,10 @@ function searchScoreLT() {
             setData1(results);
         })
     }
-    function searchLevelGT() {
-      let level = parseInt($("#level").val());
-      let TestDataClass = ncmb.DataStore(db);
-      TestDataClass.greaterThan("score",score).limit(8).fetchAll()
+    function searchScoreGT() {
+    let gameScore = ncmb.DataStore("Gamescore");
+    let score = parseInt($("#score").val());
+    gameScore.greaterThan("score",score).limit(8).fetchAll()
         .then(function(results) {
             setData1(results);
         })
