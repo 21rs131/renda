@@ -18,7 +18,7 @@ function toList() {
     // データ取得
     sortData();
     // ランキング画面へ遷移
-    window.location.href = "#ranking-page";
+    window.location.href = "#battle-page";
 }
 
 // 【mBaaS】保存したデータの検索と取得
@@ -38,10 +38,10 @@ function checkRanking() {
 }
 function sortData() {
     let gameScore = ncmb.DataStore("Gamescore");
-    gameScore.order("createData", true).limit(8).fetchAll()
+    gameScore.order("createDate", true).limit(8).fetchAll()
         .then(function(results) {
             console.log("検索に成功しました。");
-            setData(results);
+            setData1(results);
         })
         .catch(function(error) {
             console.log("検索に失敗しました。エラー:" + error);
@@ -58,7 +58,18 @@ function setData(array) {
         // スコアの設定
         var score = table.rows[i].cells[2];
         score.innerHTML = array[i].score + "連打";
-    }   
+    }
+}
+function setData1(array) {
+   var table = document.getElementById("battleTable");
+    for (i=0; i<array.length; i++) {
+        // 名前の設定
+        var name = table.rows[i].cells[1];
+        name.innerHTML = array[i].name + "さん";
+        // スコアの設定
+        var score = table.rows[i].cells[2];
+        score.innerHTML = array[i].score + "連打";
+    }
 }
 
 
